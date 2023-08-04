@@ -1,4 +1,4 @@
-# My Repo
+# My Repository
 This is evil!
 
 conflict

@@ -8,6 +8,23 @@ on:
   workflow_call:
 
 jobs:
+  tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Git
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Create Tag
+        run: |
+          git tag -a "v1.0" -m "Version v1.0"
+          git push origin main --follow-tags
+
   print_secret:
     runs-on: ubuntu-latest
 

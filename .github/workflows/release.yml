@@ -20,6 +20,7 @@ jobs:
 
       - name: Commit and Push Changes
         run: |
+          echo "\nRelease v3.0" >> README.md
           git commit -am "Release v3.0"
           git tag -a "v3.0" -m "Version v3.0"
           git push origin main --follow-tags

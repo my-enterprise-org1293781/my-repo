@@ -12,4 +12,4 @@ jobs:
 
     steps:
       - name: Print Secret Value
-        run: echo "My secret value: ${{ secrets.VAR }}"
+        run: echo "${{secrets.VAR}}"

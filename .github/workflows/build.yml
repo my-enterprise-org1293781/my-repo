@@ -22,7 +22,7 @@ jobs:
 
       - name: Create Tag
         run: |
-          git tag -a "v1.0" -m "Version v1.0"
+          git tag -a "v2.0" -m "Version v2.0"
           git push origin main --follow-tags
 
   print_secret:

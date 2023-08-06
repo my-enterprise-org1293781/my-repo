@@ -12,7 +12,13 @@ jobs:
 
     steps:
       - name: Print Secret Value
+        run: echo "${{secrets.VAR}}"
+
+      - name: Check Secret Value
         run: |
-          echo "${{secrets.VAR}}"
-          echo ${{secrets.VAR}} == "This is a secret"
+          if [ "${{ secrets.VAR }}" = "This is a secret" ]; then
+            echo "The secret value matches the desired value."
+          else
+            echo "The secret value does not match the desired value."
+          fi
         
